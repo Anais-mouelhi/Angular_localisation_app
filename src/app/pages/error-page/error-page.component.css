@@ -1,0 +1,23 @@
+.boom {
+  font-size: 90px;
+  font-weight: 900;
+  color: red;
+}
+
+.sub-boom {
+  font-size: 20px;
+  color: #fff;
+}
+
+.sub-boom::after {
+  content: "\1F601";
+}
+
+.content {
+  height: 100vh;
+}
+
+.back-btn {
+  width: 350px;
+  font-weight: 600;
+}

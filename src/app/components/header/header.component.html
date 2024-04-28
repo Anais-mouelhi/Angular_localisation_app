@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SkyFind</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+
+        <li class="nav-item">
+          <a routerLink="/home" class="nav-link {{activePage === 'home' ? 'active':''}}" aria-current="page" href="#">Accueil</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a routerLink="/wx" class="nav-link {{activePage === 'meteo' ? 'active':''}}" href="#">Météo</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/history" class="nav-link {{activePage === 'historique' ? 'active':''}}" href="#">Historique</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="dashboard">
+      <div *ngIf="profile; else notLoggedIn"></div>
+        <img [src]="profile.picture" alt="profile" class="Photo_profile">
+        <button class="btn btn-black ms-3 text-secondary" (click)="logout()">Log Out</button>
+    <ng-template #notLoggedIn>
+      <p>User not logged in.</p>
+      <button (click)="logout()">Retour</button>
+    </ng-template>
+  </div>
+</div>
+
+</nav>
+
+
+
+
+

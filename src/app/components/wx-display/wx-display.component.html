@@ -1,0 +1,40 @@
+<div class="meteo">
+  <div class="meteo-left">
+    <div class="weather-info">
+
+      <h3 class="mb-0"><strong><u>{{ this.weatherData.city }}</u></strong><span class="ms-3" style="font-size: 16px"> le {{ todayLocale }}</span></h3>
+
+      <small>lat: {{ this.weatherData.weather.coord?.lat }}, lon: {{ this.weatherData.weather.coord.lon }}</small>
+
+      <p class="weather-description mt-3">
+        Couverture:
+        <span class="fs-3">
+          {{ weatherData.weather.weather[0].description }}
+        </span>
+
+      </p>
+
+      <p class="weather-description mt-3">
+        Vent:
+        {{ weatherData.weather.wind.speed * 1.61 | number: '1.0-0' }} Km/h
+      </p>
+
+      <p>
+        <span class="weather-temperature">
+          {{ weatherData.weather.main.temp }}°C
+        </span>
+        <span class="fw-bold">
+          (ressenti: {{ weatherData.weather.main.feels_like }}°C)
+        </span>
+      </p>
+
+      <p class="air-quality">
+          Qualité de l'air:
+          <span class="fs-3">
+            {{ weatherData.airQuality }}
+          </span>
+      </p>
+    </div>
+  </div>
+
+</div>

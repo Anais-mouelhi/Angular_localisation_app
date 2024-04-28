@@ -1,0 +1,53 @@
+<div id="app-container">
+  <div class="container-struct">
+    <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
+
+
+    <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
+
+      <!-- Ici le contenu de la page -->
+      <header>
+        <div class="container h-50">
+          <div class="d-flex text-center align-items-center">
+            <div class="text-white">
+              <p class="lead mb-0"></p>
+              <h1 class="display-3">SkyFind</h1>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6" style="z-index:100">
+              <div class="main-heading">
+                <h2>Bienvenue,</h2>
+                <h1> {{ profile.name | titlecase }}</h1>
+                <p class="info-text">
+                  SkyFind est une application d'informations météorologiques.
+                </p>
+                <div class="text-center pt-5">
+                  <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="team_img_wrapper">
+                <img src="../../../../assets/images/SKYFIND (1).png" alt="team-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <ng-template #showSpinner>
+      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="spinner-border">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

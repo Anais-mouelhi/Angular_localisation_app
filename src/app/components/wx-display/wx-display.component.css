@@ -1,0 +1,44 @@
+.meteo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.meteo-left {
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon {
+  margin-right: 10px;
+  position: relative;
+  top: 20vh;
+}
+
+.weather-image {
+  width: 50vh; /* Ajuste la taille de l'image selon tes besoins */
+}
+
+.weather-info {
+  font-size: 16px;
+}
+
+.weather-description {
+  font-weight: bold;
+}
+
+.weather-temperature {
+  margin-top: 5px;
+  font-size: 60px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.meteo-right {
+  font-size: 16px;
+}
+
+.air-quality {
+  font-weight: bold;
+}

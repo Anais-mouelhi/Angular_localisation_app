@@ -1,0 +1,172 @@
+section {
+  background-color: black;
+}
+
+
+
+
+header {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    overflow: hidden;
+}
+
+.display-3{
+  font-size: 20rem;
+  max-width: 100%;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+
+}
+
+#app-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../../../assets/images/map-loc.jpeg);
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+
+}
+
+.main-heading{
+  position: relative;
+  top: 10vh;
+}
+.main-heading h2 {
+  font-size: 86px;
+  font-weight: bold;
+  color: rgb(225, 139, 19);
+}
+.main-heading h1 {
+  font-size: 46px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.info-text {
+  font-size: 16px;
+  color: #666;
+}
+
+.cta {
+  background:  rgb(238, 128, 3);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cta:hover {
+  background: rgb(238, 78, 3);
+}
+
+.btn_wrapper {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn.view_more_btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn.documentation_btn {
+  background-color: #28a745;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.btn.view_more_btn:hover,
+.btn.documentation_btn:hover {
+  background-color: #0056b3;
+}
+
+.team_img_wrapper img {
+  width: 200vh;
+  height: 200vh;
+  display: block;
+  border-radius: 5px;
+  position: relative;
+  margin-left: -35vw;
+  margin-top: -70vh;
+
+}
+
+@media screen and (max-width: 1478px) {
+  .team_img_wrapper img {
+    margin-left: -40vw;
+    margin-top: -70vh;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .display-3 {
+    font-size: 15rem;
+  }
+}
+
+@media screen and (max-width: 1131px) {
+  .team_img_wrapper img {
+    margin-left: -60vw;
+    margin-top: -70vh;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .display-3 {
+    font-size: 10rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .team_img_wrapper img {
+    left: 0vw;
+    margin-top: -65vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .team_img_wrapper img {
+    display: none;
+  }
+  .wrapper {
+    height: 100vh;
+  }
+  .display-3 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .main-heading h2 {
+    font-size: 60px
+  }
+  .main-heading h1 {
+    font-size: 40px
+  }
+  .cta {
+    width: 300px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  header {
+    padding-top:30px;
+  }
+}

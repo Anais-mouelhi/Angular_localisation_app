@@ -1,0 +1,10 @@
+.login-btn {
+  width: 320px;
+  font-size: 22px;
+  color: gray;
+}
+
+.login-btn:hover {
+  color: lightgray;
+  border: 1 px solid lightgray;
+}

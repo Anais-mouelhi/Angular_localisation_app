@@ -1,0 +1,30 @@
+<div id="app-container">
+  <div class="container-struct">
+    <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
+
+
+    <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
+
+    <!-- Ici le contenu de la page -->
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex flex-column justify-content-center align-items-center content">
+            <span class="boom">BOOM !</span>
+            <span class="sub-boom">C'est cassé...</span>
+            <a href="#" routerLink="/home" class="btn btn-warning mt-5 back-btn">Retour à l'accueil</a>
+          </div>
+        </div>
+      </div>
+    <!-- /contenu de la page -->
+    </div>
+
+    <!-- spinner de chargement -->
+    <ng-template #showSpinner>
+      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="spinner-border">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

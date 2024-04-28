@@ -1,0 +1,47 @@
+<div id="app-container">
+  <div class="container-struct">
+  <!-- Ici le contenu de la page -->
+    <div class="container">
+      <div class="row">
+        <div class="col-7 mx-auto border border-dark">
+          <div class="row">
+            <div class="col-7 mx-auto text-center">
+              <img src="../../../../assets/images/SKYFIND.png"  width="300px" alt="main logo">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col fs-5">
+              <p>
+                "Je consens à la collecte et au traitement de mes données personnelles, y compris mes données de localisation, par SKYFIND aux fins suivantes : fournir des fonctionnalités de localisation dans l'application, améliorer l'expérience utilisateur et analyser les tendances d'utilisation. Je comprends que mes données personnelles peuvent être partagées avec Google conformément à leur politique de confidentialité.
+                </p>
+                <p>
+                J'ai lu et accepte les conditions générales d'utilisation et la politique de confidentialité de [Nom de votre entreprise]. Je comprends que je peux retirer mon consentement à tout moment en modifiant mes paramètres de confidentialité dans l'application."
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col fs-5 fw-bold">
+              <input type="checkbox" id="consentCheckbox" [(ngModel)]="consentChecked" (change)="consentChange()" style="margin-right: 15px">
+              <label for="consentCheckbox mb-3">
+                J'accepte les <a href="#" routerLink="/cgu" class="fw-bold text-white" target="_blank">conditions d'utilisation </a> et la <a href="#" routerLink="/privacy" class="fw-bold text-white" target="_blank">politique de confidentialité</a>
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-center">
+              <button href="#" routerLink="/login" class="btn mt-5 mb-5 login-btn" [disabled]="!consentChecked">
+                <span class="me-3">S'enregistrer avec Google</span>
+                <img src="../../../../assets/images/google-logo.png" width="20px" alt="">
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  <!-- /contenu de la page -->
+  </div>
+</div>

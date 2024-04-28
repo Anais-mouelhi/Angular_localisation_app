@@ -1,0 +1,54 @@
+<div id="app-container">
+  <div class="container-struct-fw">
+    <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
+
+
+    <div *ngIf="!loading && !loadingWx; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
+      <!-- Ici le contenu de la page -->
+      <header>
+        <div class="container mt-5">
+          <div class="row">
+            <h1 class="dashboard-title">Angular Leaflet</h1>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <div class="container mt-5 p-5">
+          <div class="row">
+            <div class="col-md-6" *ngIf="!loadingWx">
+              <app-leaflet-map [weatherData]="weatherData" />
+            </div>
+
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+              <section *ngIf="loadingWx;  else dashBoardBlock">Sorry, no data found...</section>
+              <ng-template #dashBoardBlock>
+
+                <a class="btn btn-secondary p-3 fs-4 history-btn mb-5" routerLink="/history">Check your weather history</a>
+
+                <section #elseBlock class="dashboard-section">
+
+                  <app-wx-display [weatherData]="weatherData" [todayLocale]="todayLocale" />
+
+                </section>
+
+              </ng-template>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- /contenu de la page -->
+    </div>
+
+     <!-- spinner de chargement -->
+    <ng-template #showSpinner>
+      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="spinner-border">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
