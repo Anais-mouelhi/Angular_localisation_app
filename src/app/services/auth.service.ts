@@ -27,7 +27,7 @@ export class AuthGoogleService {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
       clientId: environment.googleClientId,
-      redirectUri: window.location.origin + '/home',
+      redirectUri: window.location.origin + '/Angular_localisation_app/home',
       scope: 'openid profile email',
       responseType: 'token id_token',
       showDebugInformation: true,
