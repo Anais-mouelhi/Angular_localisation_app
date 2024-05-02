@@ -53,8 +53,9 @@ export class ApiService
   private getHttpOptions(): HttpOptionsType {
     return {
       headers: new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'text/html, application/xhtml+xml, */*',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       }),
       responseType: 'json' as 'json'
     }
@@ -66,10 +67,11 @@ export class ApiService
     }
     return {
       headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'text/html, application/xhtml+xml, */*',
-      'withCredentials': 'true',
-      'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'withCredentials': 'true',
+        'Authorization': 'Bearer ' + token,
+        'Access-Control-Allow-Origin': '*',
       }),
       responseType: 'json' as 'json'
     }
