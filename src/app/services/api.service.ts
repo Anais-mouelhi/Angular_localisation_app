@@ -6,8 +6,8 @@ import { WxModel } from '../../models/weather.model';
 
 const geoCodingApiUrl: string = `https://nominatim.openstreetmap.org/reverse?`;
 const weatherApiUrl: string  = `https://api.openweathermap.org/data/2.5/weather?`;
-const airQualiyApiUrl: string  = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
-const backendApiRoot: string  = 'http://localhost:3000/api/';
+const airQualiyApiUrl: string  = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
+const backendApiRoot: string  = 'https://main--back-end-angular-app.netlify.app/';
 const wxApiKey: string = environment.open_weather_api_key;
 
 type HttpOptionsType = {
