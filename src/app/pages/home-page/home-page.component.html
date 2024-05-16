@@ -6,78 +6,52 @@
     <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
 
       <!-- Ici le contenu de la page -->
-      <header>
-        <div class="container h-50">
-          <div class="d-flex text-center align-items-center">
-            <div class="text-white">
-              <p class="lead mb-0"></p>
-              <h1 class="display-3">SkyFi</h1>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section class="wrapper">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6" style="z-index:100">
-              <div class="main-heading">
-                <h2>Bienvenue,</h2>
-                <h1> {{ profile.name | titlecase }}</h1>
-                <p class="info-text">
-                  SkyFind est une application d'informations météorologiques.
-                </p>
-                <div class="text-center pt-5">
-                  <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="team_img_wrapper">
-                <img src="../../../../assets/images/SKYFIND (1).png" alt="team-img" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
-    <ng-template #showSpinner>
-      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
-        <div class="spinner-border">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    </ng-template>
-  </div>
-</div>
- <section class="section hero" aria-label="home">
+      <section class="section hero" aria-label="home">
         <div class="container">
 
           <div class="hero-content">
 
-            <h1 class="h1 hero-title">Anaïs Mouelhi</h1>
+            <h1 class="h1 hero-title">SKIFIND</h1>
 
             <p class="hero-subtitle">
-             Developpeur web et mobile
+            Application AngularJs
 
             </p>
 
             <div class="hero-banner">
-              <img src="./assets/images/Dark Blue Glitch Texture Coming Soon Instagram Post.png" width="500" height="500" alt="kane williams" class="w-100">
+              <img src="../../../assets/images/Dark Blue Glitch Texture Coming Soon Instagram Post.png" width="500" height="500" alt="kane williams" class="w-100">
             </div>
 
             <p class="section-text">
-              Je suis Anaïs, une passionnée de développement web âgée de 22 ans et en recherche d'une opportunité d'alternance pour mon master en TechLead. Ma double casquette de développeur junior en alternance et d'esprit créatif me permet de naviguer entre le monde technique et celui de l'innovation.
+              Bienvenue,je vous presente mon application d'informations météorologiques et de geolocalisation.
             </p>
 
-            <a href="./assets/images/CV-Anais-Mouelhi.pdf" class="btn has-before">
-              <span class="span">Télécharger CV</span>
+            <div class="text-center pt-5">
+              <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
+            </div>
 
-              <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
-            </a>
+           
 
           </div>
 
         </div>
       </section>
+
+
+
+
+
+      
+
+
+
+  
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./../../../assets/js/script.js"></script>
