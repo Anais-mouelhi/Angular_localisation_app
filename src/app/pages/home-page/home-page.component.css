@@ -522,6 +522,7 @@ body.nav-active { overflow: hidden; }
 .hero-title {
   text-transform: uppercase;
   word-break: break-all;
+  font-size: 10rem;
 }
 
 .hero-subtitle {
