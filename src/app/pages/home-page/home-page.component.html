@@ -1,92 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<div id="app-container">
+  <div class="container-struct">
+    <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 
-    - primary meta tags
-  -->
-  <title>Chainez Mouelhi - Web & App Developpeuse</title>
-  <meta name="title" content="Chainez Mouelhi - Web & App Developpeuse">
-  <meta name="description" content="This is a personal portfolio html template made by Chainez Mouelhi">
+    <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/fav.png" type="image/svg+xml">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="../../pages/home-page/home-page.component.css">
-
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="./assets/images/docker.svg">
-</head>
-
-<body>
-
-  <!-- 
-    - #PRELOADER
-  -->
-  <div class="preloader" data-preloader>
-    <div class="circle"></div>
-  </div>
-
-  <div id="app-container">
-    <div class="container-struct">
-      <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
-
-      <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Contenu de la page -->
-  <section class="section hero" aria-label="home">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="h1 hero-title">SKIFIND</h1>
-        <p class="hero-subtitle">
-          Application AngularJs
-        </p>
-        <div class="hero-banner">
-          <img src="../../../assets/images/Dark Blue Glitch Texture Coming Soon Instagram Post.png" width="500" height="500" alt="kane williams" class="w-100">
+      <!-- Ici le contenu de la page -->
+      <header>
+        <div class="container h-50">
+          <div class="d-flex text-center align-items-center">
+            <div class="text-white">
+              <p class="lead mb-0"></p>
+              <h1 class="display-3">SkyFind</h1>
+            </div>
+          </div>
         </div>
-        <p class="section-text">
-          Bienvenue, je vous présente mon application d'informations météorologiques et de géolocalisation.
-        </p>
-        <div class="text-center pt-5">
-          <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
+      </header>
+
+      <section class="wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6" style="z-index:100">
+              <div class="main-heading">
+                <h2>Bienvenue,</h2>
+                <h1> {{ profile.name | titlecase }}</h1>
+                <p class="info-text">
+                  SkyFind est une application d'informations météorologiques.
+                </p>
+                <div class="text-center pt-5">
+                  <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="team_img_wrapper">
+                <img src="../../../../assets/images/SKYFIND (1).png" alt="team-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <ng-template #showSpinner>
+      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="spinner-border">
+          <span class="visually-hidden">Loading...</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <ng-template #showSpinner>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
-      <div class="spinner-border">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </div>
-  </ng-template>
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./../../../assets/js/script.js"></script>
-</body>
-
-</html>
+    </ng-template>
+  </div>
+</div>
