@@ -522,7 +522,8 @@ body.nav-active { overflow: hidden; }
 .hero-title {
   text-transform: uppercase;
   word-break: break-all;
-  font-size: 7rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 6rem;
 }
 
 .hero-subtitle {
