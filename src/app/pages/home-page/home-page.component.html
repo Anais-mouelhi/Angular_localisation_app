@@ -1,7 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Chainez Mouelhi - Web & App Developpeuse</title>
+  <meta name="title" content="Kane Williams - Web & App Developer">
+  <meta name="description" content="This is a personal portfolio html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/fav.png" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/docker.svg">
+
+</head>
+
+<body>
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preloader" data-preloader>
+    <div class="circle"></div>
+  </div>
+
+
+
+
+
 <div id="app-container">
   <div class="container-struct">
     <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
-
 
     <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
 
@@ -14,8 +66,7 @@
             <h1 class="h1 hero-title">SKIFIND</h1>
 
             <p class="hero-subtitle">
-            Application AngularJs
-
+              Application AngularJs
             </p>
 
             <div class="hero-banner">
@@ -23,35 +74,34 @@
             </div>
 
             <p class="section-text">
-              Bienvenue,je vous presente mon application d'informations météorologiques et de geolocalisation.
+              Bienvenue, je vous présente mon application d'informations météorologiques et de géolocalisation.
             </p>
 
             <div class="text-center pt-5">
               <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
             </div>
 
-           
-
           </div>
 
         </div>
       </section>
 
+    </div>
 
+    <ng-template #showSpinner>
+      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="spinner-border">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
 
+<!-- 
+  - custom js link
+-->
+<script src="./../../../assets/js/script.js"></script>
+</body>
 
-
-      
-
-
-
-  
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./../../../assets/js/script.js"></script>
+</html>

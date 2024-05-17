@@ -602,58 +602,11 @@ body.nav-active { overflow: hidden; }
 
 
 
-section {
-  background-color: black;
-}
 
 
 
 
-header {
-    position: relative;
-    background-color: black;
-    width: 100%;
-    overflow: hidden;
-}
 
-.display-3{
-  font-size: 20rem;
-  max-width: 100%;
-}
-
-.container {
-  position: relative;
-  z-index: 2;
-
-}
-
-#app-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url(../../../assets/images/map-loc.jpeg);
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
-
-}
-
-.main-heading{
-  position: relative;
-  top: 10vh;
-}
-.main-heading h2 {
-  font-size: 86px;
-  font-weight: bold;
-  color: rgb(225, 139, 19);
-}
-.main-heading h1 {
-  font-size: 46px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-}
 
 .info-text {
   font-size: 16px;
