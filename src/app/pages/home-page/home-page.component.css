@@ -523,8 +523,8 @@ body.nav-active { overflow: hidden; }
   text-transform: uppercase;
   word-break: break-all;
   font-family: 'Syne', sans-serif;
-  font-size: 6rem;
-  font-weight: 800;
+  font-size: 7rem;
+  font-weight: 1000;
 }
 
 .hero-subtitle {
