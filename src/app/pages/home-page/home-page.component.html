@@ -10,8 +10,8 @@
     - primary meta tags
   -->
   <title>Chainez Mouelhi - Web & App Developpeuse</title>
-  <meta name="title" content="Kane Williams - Web & App Developer">
-  <meta name="description" content="This is a personal portfolio html template made by codewithsadee">
+  <meta name="title" content="Chainez Mouelhi - Web & App Developpeuse">
+  <meta name="description" content="This is a personal portfolio html template made by Chainez Mouelhi">
 
   <!-- 
     - favicon
@@ -34,7 +34,6 @@
     - preload images
   -->
   <link rel="preload" as="image" href="./assets/images/docker.svg">
-
 </head>
 
 <body>
@@ -42,71 +41,52 @@
   <!-- 
     - #PRELOADER
   -->
-
   <div class="preloader" data-preloader>
     <div class="circle"></div>
   </div>
 
+  <div id="app-container">
+    <div class="container-struct">
+      <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
 
-
-
-
-<div id="app-container">
-  <div class="container-struct">
-    <app-header [activePage]="activePage" [profile]="profile" *ngIf="!loading"></app-header>
-
-    <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
-
-
+      <div *ngIf="!loading; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
       </div>
-      </div>
-      </div>
-
-      <!-- Ici le contenu de la page -->
-      <section class="section hero" aria-label="home">
-        <div class="container">
-
-          <div class="hero-content">
-
-            <h1 class="h1 hero-title">SKIFIND</h1>
-
-            <p class="hero-subtitle">
-              Application AngularJs
-            </p>
-
-            <div class="hero-banner">
-              <img src="../../../assets/images/Dark Blue Glitch Texture Coming Soon Instagram Post.png" width="500" height="500" alt="kane williams" class="w-100">
-            </div>
-
-            <p class="section-text">
-              Bienvenue, je vous présente mon application d'informations météorologiques et de géolocalisation.
-            </p>
-
-            <div class="text-center pt-5">
-              <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
     </div>
+  </div>
 
-    <ng-template #showSpinner>
-      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
-        <div class="spinner-border">
-          <span class="visually-hidden">Loading...</span>
+  <!-- Contenu de la page -->
+  <section class="section hero" aria-label="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="h1 hero-title">SKIFIND</h1>
+        <p class="hero-subtitle">
+          Application AngularJs
+        </p>
+        <div class="hero-banner">
+          <img src="../../../assets/images/Dark Blue Glitch Texture Coming Soon Instagram Post.png" width="500" height="500" alt="kane williams" class="w-100">
+        </div>
+        <p class="section-text">
+          Bienvenue, je vous présente mon application d'informations météorologiques et de géolocalisation.
+        </p>
+        <div class="text-center pt-5">
+          <a routerLink="/wx" class="btn btn-warning text-white cta" href="#">Voir les conditions météo</a>
         </div>
       </div>
-    </ng-template>
-  </div>
-</div>
+    </div>
+  </section>
 
-<!-- 
-  - custom js link
--->
-<script src="./../../../assets/js/script.js"></script>
+  <ng-template #showSpinner>
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+      <div class="spinner-border">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./../../../assets/js/script.js"></script>
 </body>
 
 </html>
