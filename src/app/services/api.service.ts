@@ -7,9 +7,9 @@ import { WxModel } from '../../models/weather.model';
 const geoCodingApiUrl: string = `https://nominatim.openstreetmap.org/reverse?`;
 const weatherApiUrl: string  = `https://api.openweathermap.org/data/2.5/weather?`;
 const airQualiyApiUrl: string  = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
-const backendApiRoot: string  = 'http://localhost:3000/api/';
+const backendApiRoot: string  =  'https://back-angular-app.vercel.app/api/history';
 const wxApiKey: string = environment.open_weather_api_key;
-
+//'http://localhost:3000/api/'
 type HttpOptionsType = {
   headers: HttpHeaders,
   responseType: "json"
