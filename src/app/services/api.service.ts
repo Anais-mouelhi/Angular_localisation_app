@@ -6,10 +6,10 @@ import { WxModel } from '../../models/weather.model';
 
 const geoCodingApiUrl: string = `https://nominatim.openstreetmap.org/reverse?`;
 const weatherApiUrl: string  = `https://api.openweathermap.org/data/2.5/weather?`;
-const airQualiyApiUrl: string  = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
-const backendApiRoot: string  =  'https://back-angular-e157d9448e88.herokuapp.com/api';
+const airQualiyApiUrl: string  = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
+const backendApiRoot: string  = 'http://localhost:3000/api/';
 const wxApiKey: string = environment.open_weather_api_key;
-//'http://localhost:3000/api/'
+
 type HttpOptionsType = {
   headers: HttpHeaders,
   responseType: "json"
@@ -53,7 +53,7 @@ export class ApiService
   private getHttpOptions(): HttpOptionsType {
     return {
       headers: new HttpHeaders({
-     
+      'Content-Type': 'application/x-www-form-urlencoded',
       'Accept': 'text/html, application/xhtml+xml, */*',
       }),
       responseType: 'json' as 'json'
@@ -66,7 +66,7 @@ export class ApiService
     }
     return {
       headers: new HttpHeaders({
-     
+      'Content-Type': 'application/json',
       'Accept': 'text/html, application/xhtml+xml, */*',
       'withCredentials': 'true',
       'Authorization': 'Bearer ' + token,
