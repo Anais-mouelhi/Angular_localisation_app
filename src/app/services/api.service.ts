@@ -53,7 +53,7 @@ export class ApiService
   private getHttpOptions(): HttpOptionsType {
     return {
       headers: new HttpHeaders({
-     
+       'Content-Type': 'application/json',
       'Accept': 'text/html, application/xhtml+xml, */*',
       }),
       responseType: 'json' as 'json'
@@ -66,7 +66,7 @@ export class ApiService
     }
     return {
       headers: new HttpHeaders({
-     
+      'Content-Type': 'application/json',
       'Accept': 'text/html, application/xhtml+xml, */*',
       'withCredentials': 'true',
       'Authorization': 'Bearer ' + token,
