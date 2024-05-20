@@ -1,5 +1,3 @@
-// api.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Coords } from '../../models/geo.model';
@@ -8,8 +6,8 @@ import { WxModel } from '../../models/weather.model';
 
 const geoCodingApiUrl: string = `https://nominatim.openstreetmap.org/reverse?`;
 const weatherApiUrl: string  = `https://api.openweathermap.org/data/2.5/weather?`;
-const airQualiyApiUrl: string  = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
-const backendApiRoot: string  =  'https://back-angular-e157d9448e88.herokuapp.com/api/';
+const airQualiyApiUrl: string  = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
+const backendApiRoot: string  = 'https://location-backend-441bf7e22256.herokuapp.com/api/';
 const wxApiKey: string = environment.open_weather_api_key;
 
 type HttpOptionsType = {
@@ -22,8 +20,11 @@ type HttpOptionsType = {
   providedIn: 'root',
 })
 
-export class ApiService {
-  constructor(private readonly http: HttpClient) {}
+export class ApiService
+{
+  constructor(
+    private readonly http: HttpClient
+  ) {}
 
   getCityName(coords: Coords) {
     return this.http.get(`${geoCodingApiUrl}lat=${coords.lat}&lon=${coords.lon}&format=json`, this.getHttpOptions());
@@ -52,7 +53,7 @@ export class ApiService {
   private getHttpOptions(): HttpOptionsType {
     return {
       headers: new HttpHeaders({
-       'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
       'Accept': 'text/html, application/xhtml+xml, */*',
       }),
       responseType: 'json' as 'json'
