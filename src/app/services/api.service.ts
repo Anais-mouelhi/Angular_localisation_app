@@ -6,7 +6,7 @@ import { WxModel } from '../../models/weather.model';
 
 const geoCodingApiUrl: string = `https://nominatim.openstreetmap.org/reverse?`;
 const weatherApiUrl: string  = `https://api.openweathermap.org/data/2.5/weather?`;
-const airQualiyApiUrl: string  = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
+const airQualiyApiUrl: string  = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?`;
 const backendApiRoot: string  = 'https://location-backend-441bf7e22256.herokuapp.com/api/';
 const wxApiKey: string = environment.open_weather_api_key;
 
