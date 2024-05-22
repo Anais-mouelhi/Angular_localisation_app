@@ -42,9 +42,9 @@ body{
 }
 
 .page-content {
-  background-color:hsla(228, 9%, 10%, 1);
+  background:url(../../../assets/images/Présentation\ Marketing\ Professionnelle\ Noir.png);
+  background-size: cover;
 }
-
 .wrapper {
   display: grid;
   grid-template-columns: 3fr 4fr;
