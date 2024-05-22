@@ -26,11 +26,7 @@ body{
 
 .dashboard-section {
   position:relative;
-  background: rgba(255, 255, 255, 0.517);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgb(255, 255, 255);
-  backdrop-filter: blur(6.5px);
-  -webkit-backdrop-filter: blur(6.5px);
+  border: solid #fff;
   padding: 20px; /* Espacement à l'intérieur de la section */
   margin-top: 20px; /* Espacement en haut de la section */
 }
@@ -45,7 +41,7 @@ body{
 }
 
 .page-content {
-  background-color:hsla(228, 9%, 10%, 1);
+  background:url(../../../assets/images/18a597172215809.647b601aae60c.jpg)
 }
 
 .wrapper {
