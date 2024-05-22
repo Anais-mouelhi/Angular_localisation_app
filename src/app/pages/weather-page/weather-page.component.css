@@ -41,7 +41,7 @@ body{
 }
 
 .page-content {
-  background:url(../../../assets/images/fd05cd71013503.5bbb85f2d3951.png)
+  background:url(../../../assets/images/4a07509115451.560c8e7fd0de7.jpg)
 }
 
 .wrapper {
@@ -193,4 +193,58 @@ body{
     transition: all 0.5s ease-in;
     opacity: 1;
   }
+}
+
+
+.page-content {
+  background-color: #4c76774b;
+}
+
+.slide {
+  width: 550px;
+  height: 170px;
+  padding: 15px;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  border-radius:4px;
+  padding: 5px;
+  background: rgba(200, 200, 255, 0.517);
+  box-shadow: 0 4px 4px rgb(255, 255, 255);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  -ms-border-radius:4px;
+  -o-border-radius:4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+}
+
+.slide-left {
+  width: 35%;
+  height: 100%;
+}
+
+.slide-right {
+  width: 65%;
+  height: 100%;
+  border-left: 1px solid rgb(255, 255, 255, 0.5)
+}
+
+.fs-small {
+  font-size: 10px;
+}
+
+.remove-history-btn {
+  width: 250px;
+  position: absolute;
+  right: 25px;
+  top: 0px;
 }

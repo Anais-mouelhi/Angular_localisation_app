@@ -53,6 +53,8 @@ export class WeatherPageComponent implements OnInit{
         this.loading = false;
         this.profile = profile;
         this.profile.token = this.authService.getIdToken();
+
+        
       }
     });
     setTimeout(async () => {
