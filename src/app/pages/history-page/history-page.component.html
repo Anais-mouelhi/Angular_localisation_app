@@ -5,6 +5,33 @@
     <div *ngIf="!loading && !loadingWx; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
       <!-- Ici le contenu de la page -->
 
+
+      <section>
+        <div class="container mt-5 p-5">
+          <div class="row">
+            <div class="col-md-6" *ngIf="!loadingWx">
+              <app-leaflet-map [weatherData]="weatherData" />
+            </div>
+
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+              <section *ngIf="loadingWx;  else dashBoardBlock">Sorry, no data found...</section>
+              <ng-template #dashBoardBlock>
+
+                <a class="btn btn-secondary p-3 fs-4 history-btn mb-5" routerLink="/history">Check your weather history</a>
+
+                <section #elseBlock class="dashboard-section">
+
+                  <app-wx-display [weatherData]="weatherData" [todayLocale]="todayLocale" />
+
+                </section>
+
+              </ng-template>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <div class="container mt-5">
         <div class="row position-relative">
           <button class="btn btn-danger remove-history-btn" (click)="removeHistory()" >Supprimer l'historique</button>
