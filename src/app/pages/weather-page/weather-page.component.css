@@ -16,7 +16,7 @@ body{
 
 .dashboard-map {
   position: relative;
-  top: 10vh;
+  top: -10vh;
   height: 70vh; /* Ajuste la hauteur de la carte selon tes besoins */
   width: 70vh;
   border: 2px solid #007bff; /* Couleur du contour de la carte */
@@ -45,7 +45,7 @@ body{
 }
 
 .page-content {
-  background-color: #4c76774b;
+  background-color:hsla(228, 9%, 10%, 1);
 }
 
 .wrapper {
