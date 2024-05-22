@@ -1,16 +1,3 @@
-.dashboard-map {
-  position: relative;
-  top: 0vh;
-  height: 50vh;
-  width: 50vh;
-  border: 2px solid #007bff;
-  border-radius: 10px;
-  filter: grayscale(100%)brightness(100%);
-}
-
-
-
-
 .page-content {
   background: url(../../../assets/images/nuag2.png);
   background-size: cover;
@@ -28,7 +15,7 @@
   height: 100%;
   border: 1px solid gray;
   border-radius: 4px;
-  padding: 15px;
+  padding: 8px;
   background: rgba(200, 200, 255, 0.517);
   box-shadow: 0 4px 4px rgb(255, 255, 255);
   backdrop-filter: blur(6.5px);
