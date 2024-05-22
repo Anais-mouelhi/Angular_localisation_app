@@ -1,5 +1,5 @@
 body{
-  background: rgba(19, 15, 15, 0.23);
+  background: hsla(228, 9%, 10%, 1);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.5px);
@@ -16,7 +16,7 @@ body{
 
 .dashboard-map {
   position: relative;
-  top: 0vh;
+  top: 10vh;
   height: 70vh; /* Ajuste la hauteur de la carte selon tes besoins */
   width: 70vh;
   border: 2px solid #007bff; /* Couleur du contour de la carte */
