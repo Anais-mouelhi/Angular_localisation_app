@@ -1,5 +1,5 @@
 body{
-  background:url(../../../assets/images/lune.png);
+  background:url(../../../assets/images/Présentation\ Marketing\ Professionnelle\ Noir.png);
   background-size: cover;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -42,8 +42,7 @@ body{
 }
 
 .page-content {
-  background:url(../../../assets/images/lune.png);
-  background-size: cover;
+  background-color:hsla(228, 9%, 10%, 1);
 }
 
 .wrapper {
