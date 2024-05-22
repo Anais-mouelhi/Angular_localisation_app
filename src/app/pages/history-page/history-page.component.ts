@@ -22,21 +22,22 @@ import { WxModel } from '../../../models/weather.model';
     DatePipe,
   ],
   templateUrl: './history-page.component.html',
-  styleUrls: ['./history-page.component.css']  // Notez que c'est 'styleUrls' et non 'styleUrl'
+  styleUrl: './history-page.component.css'
 })
 export class HistoryPageComponent implements OnInit{
   public activePage!: string;
   public profile!: User;
   public loading: boolean = true;
   public loadingWx: boolean = true;
-  public weatherData!: any[];
+  public weatherData!: any;
   public slideConfig!: any;
 
   constructor(
     private authService: AuthGoogleService,
     private weatherService: WxService,
     private toastr: ToastrService
-  ) {
+  )
+  {
     this.activePage = "historique";
     this.slideConfig = {"slidesToShow": 3, "slidesToScroll": 2};
     // verification de l'authentification
@@ -51,7 +52,7 @@ export class HistoryPageComponent implements OnInit{
       if(this.loading) {
         await this.logout();
       }
-    }, 3000);
+    }, 3000)
   }
 
   ngOnInit(): void {
@@ -61,11 +62,12 @@ export class HistoryPageComponent implements OnInit{
     })
     .catch((e) => {
       console.log(e);
-    });
+    })
   }
 
   async loadWxHistory() {
     const wx = await this.weatherService.getUserHistory(this.profile.email, this.profile.token);
+    // console.log(wx);
     this.weatherData = wx;
     this.loadingWx = false;
   }
@@ -75,20 +77,17 @@ export class HistoryPageComponent implements OnInit{
   }
 
   async removeHistory() {
+    console.log("kjhkjhkj");
     this.loadingWx = true;
     this.loading = true;
-    const res = await this.weatherService.deleteUserHistory(this.profile.email, this.profile.token);
-    await this.loadWxHistory();
-    console.log(res);
+    const res = await this.weatherService.deleteUserHistory(this.profile.email, this.profile.token)
+    await this.loadWxHistory()
+    console.log(res)
     this.loadingWx = false;
     this.loading = false;
   }
 
   async logout(): Promise<void> {
     await this.authService.logout();
-  }
-
-  trackByCreatedAt(index: number, item: any): any {
-    return item.createdAt;
   }
 }

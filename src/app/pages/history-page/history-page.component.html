@@ -4,71 +4,95 @@
 
     <div *ngIf="!loading && !loadingWx; else showSpinner" class="w-100 page-content" style="height: 100vh; overflow: hidden;">
       <!-- Ici le contenu de la page -->
+
       <div class="container mt-5">
         <div class="row position-relative">
-          <button class="btn btn-danger remove-history-btn" (click)="removeHistory()">Supprimer l'historique</button>
+          <button class="btn btn-danger remove-history-btn" (click)="removeHistory()" >Supprimer l'historique</button>
 
-          <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center align-items-center">
-            <app-leaflet-map [weatherData]="weatherData"></app-leaflet-map>
-          </div>
-
-          <div class="col-lg-6 col-md-12">
-            <ngx-slick-carousel class="carousel"
-                        #slickModal="slick-carousel"
-                        [config]="slideConfig"
-                        (init)="slickInit($event)">
-              <div *ngFor="let position of weatherData; trackBy: position.created_at" ngxSlickItem class="slide">
-                <div class="slide-content">
-                  <div class="slide-left d-flex flex-column justify-content-center align-items-center">
-                    <span class="fw-bold">
-                      <u>{{ position.city }}</u>
-                    </span>
-                    <small class="mt-2">
-                      {{ position.createdAt | date: "dd/MM/yyyy HH:mm"}}
-                    </small>
-                    <small class="fs-small">
-                      (Lat: {{ position.lat }}
-                    </small>
-                    <small class="fs-small">
-                      Lon: {{ position.lon }})
-                    </small>
-                  </div>
-                  <div class="slide-right d-flex flex-column justify-content-start align-items-start p-1">
-                    <small>
-                      <span class="fs-small">Nuages:</span>
-                      <span class="fw-bold">{{ position.weather.weather[0].description }} ({{ position.weather.clouds.all }}%)</span>
-                    </small>
-                    <small>
-                      <span class="fs-small">Température:</span>
-                      <span class="fw-bold">{{ position.weather.main.temp }}°C</span>
-                    </small>
-                    <small>
-                      <span class="fs-small">Ressenti:</span>
-                      <span class="fw-bold">{{ position.weather.main.feels_like }}°C</span>
-                    </small>
-                    <small>
-                      <span class="fs-small">Vent:</span>
-                      <span class="fw-bold">{{ position.weather.wind.speed * 1.61 | number: '1.0-0' }} Km/h</span>
-                    </small>
-                    <small>
-                      <span class="fs-small">Visibilité:</span>
-                      <span class="fw-bold">{{ position.weather.visibility }} m.</span>
-                    </small>
-                    <small>
-                      <span class="fs-small">Qualité de l'air:</span>
-                      <span class="fw-bold">{{ position.airQuality }}</span>
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </ngx-slick-carousel>
+          <div class="col-md-8 mx-auto d-flex flex-column justify-content-center align-items-center">
+            <app-leaflet-map [weatherData]="weatherData" />
           </div>
         </div>
 
         <div *ngIf="!weatherData.length" class="col mt-3 fs-3 text-center text-danger">
           NO DATA FOUND
         </div>
+
+        <div class="row">
+          <div class="col mt-3">
+            <ngx-slick-carousel class="carousel"
+                        #slickModal="slick-carousel"
+                        [config]="slideConfig"
+                        (init)="slickInit($event)">
+        @for (position of weatherData; track position.created_at) {
+            <div ngxSlickItem class="slide">
+                  <div class="slide-content">
+                      <div class="slide-left d-flex flex-column justify-content-center align-items-center">
+                          <span class=" fw-bold">
+                            <u>{{ position.city }}</u>
+                          </span>
+                          <small class="mt-2">
+                            {{ position.createdAt | date: "dd/MM/yyyy HH:mm"}}
+                          </small>
+                          <small class="fs-small">
+                            (Lat: {{ position.lat }}
+                          </small>
+                          <small class="fs-small">
+                            Lon: {{ position.lon }})
+                          </small>
+                      </div>
+                      <div class="slide-right d-flex flex-column justify-content-start align-items-start p-1">
+                        <small>
+                          <span class="fs-small">
+                            Nuages:
+                          </span>
+                          <span class="fw-bold">{{ position.weather.weather[0].description }} ({{ position.weather.clouds.all }}%)</span>
+                        </small>
+
+                        <small>
+                          <span class="fs-small">
+                            Température:
+                          </span>
+                          <span class="fw-bold">{{ position.weather.main.temp }}°C</span>
+                        </small>
+
+                        <small>
+                          <span class="fs-small">
+                            Ressenti:
+                          </span>
+                          <span class="fw-bold">{{ position.weather.main.feels_like }}°C</span>
+                        </small>
+
+                        <small>
+                          <span class="fs-small">
+                            Vent:
+                          </span>
+                          <span class="fw-bold">{{ position.weather.wind.speed * 1.61 | number: '1.0-0'}} Km/h</span>
+                        </small>
+
+                        <small>
+                          <span class="fs-small">
+                            Visibilité:
+                          </span>
+                          <span class="fw-bold">{{ position.weather.visibility }} m.</span>
+                        </small>
+
+                        <small>
+                          <span class="fs-small">
+                            Qualité de l'air:
+                          </span>
+                          <span class="fw-bold">{{ position.airQuality }}</span>
+                        </small>
+                      </div>
+                  </div>
+            </div>
+        }
+    </ngx-slick-carousel>
+          </div>
+        </div>
+
       </div>
+
       <!-- /contenu de la page -->
     </div>
 
